@@ -1,0 +1,48 @@
+{
+  "user": [
+    {
+      "natId": 7485,
+      "company": "DIGINAMIC",
+      "name": "Tom Cermelli",
+      "email": "fdsfdslli91@gmail.com",
+      "address": "26 Rue de Clementville",
+      "birthDate": "",
+      "phone": "0781214495",
+      "isActive": false,
+      "id": 22
+    },
+    {
+      "natId": 1042,
+      "company": "DIGINAMIC",
+      "name": "solene",
+      "email": "solene.prum@hotmail.fr",
+      "address": "26 Rue de Clementville",
+      "birthDate": "",
+      "phone": "0781214495",
+      "isActive": false,
+      "id": 23
+    },
+    {
+      "natId": 24,
+      "company": "DIGINAMIC",
+      "name": "Alix Muller",
+      "email": "amuller.tools@gmail.com",
+      "address": "26 Rue de Clementville",
+      "birthDate": "2021-04-13",
+      "phone": "0781214495",
+      "isActive": true,
+      "id": 24
+    },
+    {
+      "natId": 254,
+      "company": "DIGINAMIC",
+      "name": "mai eve",
+      "email": "maieve.holtzer@wanadoo.fr",
+      "address": "26 Rue de Clementville",
+      "birthDate": "",
+      "phone": "0781214495",
+      "isActive": true,
+      "id": 25
+    }
+  ]
+}

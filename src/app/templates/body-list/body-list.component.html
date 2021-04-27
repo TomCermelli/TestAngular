@@ -1,0 +1,86 @@
+<div class="container container-pos">
+  <section class="d-flex header-pos">
+    <section class="col-6">
+      <h2><i class="fa fa-users fa-lg"></i> ({{pagination.totalElement}}) Users</h2>
+    </section>
+    <section class="col-3">
+      <section>
+        <div class="btn-group" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-secondary" (click)="filterByStatus()"
+          [ngClass]="{'btn-info' : !query.status.length}">All</button>
+          <button type="button" class="btn btn-secondary" (click)="filterByStatus(true)"
+          [ngClass]="{'btn-info' : query.status.indexOf(true) != -1}">Active</button>
+          <button type="button" class="btn btn-secondary" (click)="filterByStatus(false)"
+          [ngClass]="{'btn-info' : query.status.indexOf(false) != -1}">Inactive</button>
+        </div>
+      </section>
+    </section>
+    <section class="d-flex input-group col-3">
+      <nav class=" navbar-light">
+        <form class="form-inline">
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="fa fa-search"></i></span>
+            </div>
+            <input type="text" class="form-control" placeholder="Tape your keyword" aria-label="Username"
+              aria-describedby="basic-addon1" (input)="searchByName($event)">
+          </div>
+        </form>
+      </nav>
+    </section>
+  </section>
+
+  <!--Table-->
+  <table class="table table-bordered text-center">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nat.ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Company</th>
+        <th scope="col">Address</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Birth Date</th>
+        <th scope="col">Picture</th>
+        <th scope="col">Status</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <th class="align-middle" scope="row">{{user.index}}</th>
+        <td class="align-middle">{{user.id}}</td>
+        <td class="align-middle">{{user.name}}</td>
+        <td class="align-middle">{{user.email}}</td>
+        <td class="align-middle">{{user.company}}</td>
+        <td class="align-middle">{{user.address}}</td>
+        <td class="align-middle">{{user.phone}}</td>
+        <td class="align-middle">{{user.birthDate|date: "longDate" }}</td>
+        <td class="text-center align-middle"><img [src]="user.picture" width="50px" /></td>
+        <td class="align-middle">
+          <span *ngIf="user.isActive" class="btn btn-success">
+            Active
+          </span>
+          <span *ngIf="!user.isActive" class="btn btn-danger">
+            Inactive
+          </span>
+        </td>
+        <td class="align-middle">
+          <div class="d-flex">
+            <a class ="nav-link btn btn-info" routerLink="/users/edit/{{user.id}}"><i class="fa fa-pencil"></i> </a>
+            <a class= "nav-link btn btn-danger" (click)="deleteUser(user)"><i class="fa fa-trash "></i></a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item" [ngClass]="{'active': page == pagination.currentPage}" (click)="paginate(page)"
+        *ngFor='let page of pages'>
+        <a class="page-link btn" hred="#">{{page}}</a>
+      </li>
+    </ul>
+  </nav>
+</div>

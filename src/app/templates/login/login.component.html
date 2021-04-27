@@ -1,0 +1,36 @@
+<div class="row">
+    <section class="col"></section>
+    <section class="col-10">
+        <section class="row justify-content-center">
+            <h3>
+                <i class="fa fa-user"></i> Authentification
+            </h3>
+        </section>
+        <section class="row mt-3">
+            <section class="col-12">
+                <section class="form-row justify-content-center">
+                    <section class="form-group col-md-4">
+                        <label>Login</label>
+                        <input [(ngModel)]="email" name="email" type="email" class="form-control"
+                        [ngClass]="{'is-invalid' : !emailValidator}"  placeholder="zouloutest@gmail.com...">
+                    </section>
+                </section>
+                <section class="form-row justify-content-center">
+                    <section class="form-group col-md-4">
+                        <label>Mot de passe</label>
+                        <input class="form-control" 
+                        [ngClass]="{'is-invalid' : !emailValidator}" placeholder="zouloudu34....">
+                        <small>
+                            <p>Mot de passe oublié ?<br><a href="#">cliquer ici</a></p>
+                        </small>
+                    </section>
+                </section>
+                <section class="form-row justify-content-center">
+                    <div></div>
+                    <button class="btn btn-primary" type="submit" (click)="login()">Submit</button>
+                </section>
+            </section>
+        </section>
+    </section>
+    <section class="col"></section>
+</div>
